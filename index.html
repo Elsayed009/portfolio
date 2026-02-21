@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elsayed | Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video Slider - Collapsible Left Side (Starts Hidden) -->
+    <div class="video-slider collapsed" id="videoSlider">
+        <div class="video-slider-content">
+            <div class="video-slider-header">
+                <h3>Learn FullStack</h3>
+                <button class="close-slider-btn" id="closeSliderBtn" title="Hide Videos">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="video-list">
+                <div class="video-item active" data-video="https://www.youtube.com/embed/OZ37yG6P9B8">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/OZ37yG6P9B8/mqdefault.jpg" alt="Video 1">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Full Stack Development Roadmap 2024</h4>
+                        <p>Learn everything you need</p>
+                    </div>
+                </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/nu_pCVPKzN8">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/nu_pCVPKzN8/mqdefault.jpg" alt="Video 2">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>React JS Full Course</h4>
+                        <p>Master React from scratch</p>
+                    </div>
+                </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/OlKvRjgeV0w">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/OlKvRjgeV0w/mqdefault.jpg" alt="Video 3">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Node.js Tutorial</h4>
+                        <p>Backend development</p>
+                    </div>
+                </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/yZb5MNqq0do">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/yZb5MNqq0do/mqdefault.jpg" alt="Video 4">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>JavaScript Crash Course</h4>
+                        <p>JavaScript fundamentals</p>
+                    </div>
+                </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/BKayEtbw6zM">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/BKayEtbw6zM/mqdefault.jpg" alt="Video 5">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>MERN Stack Tutorial</h4>
+                        <p>Build fullstack apps</p>
+                    </div>
+                </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/TlB_eWDSMt4">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/TlB_eWDSMt4/mqdefault.jpg" alt="Video 6">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>SQL Database Course</h4>
+                        <p>Database design & SQL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-player">
+                <iframe id="video-frame" src="https://www.youtube.com/embed/OZ37yG6P9B8" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider Toggle Button -->
+    <button class="slider-toggle" id="sliderToggle" title="Show/Hide Videos">
+        <span class="slider-text" id="sliderText">Videos</span>
+        <i class="fas fa-chevron-left" id="sliderIcon"></i>
+    </button>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">
+                <span class="logo-text">Elsayed</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80" alt="Background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Hello, I'm</span>
+                <h1 class="hero-title">Elsayed</h1>
+                <p class="hero-text">Professional <span class="typed-text"></span><span class="cursor">|</span></p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Elsayed - Full Stack Developer">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">About Me</span>
+                <h2 class="section-title">Let Me Introduce Myself</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="About Me">
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-text">
+                    <h3>I'm Elsayed</h3>
+                    <h4>Full Stack Developer</h4>
+                    <p>I am a passionate Full Stack Developer with expertise in building modern, scalable web applications. I love turning ideas into reality through code and continuously learning new technologies.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <span class="info-label">Name</span>
+                                <span class="info-value">Elsayed</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">elsayed@example.com</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Available Worldwide</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <span class="info-label">Experience</span>
+                                <span class="info-value">1+ Years</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Download CV <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+            
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h3 class="skills-title">My Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">C++</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">React.js</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">MySQL</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">ASP.NET</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Redux</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Services</span>
+                <h2 class="section-title">What I Can Do</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Building modern, responsive websites and web applications using cutting-edge technologies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Full Stack Solutions</h3>
+                    <p>End-to-end development from frontend to backend with clean, maintainable code.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Design</h3>
+                    <p>Designing and optimizing database structures for efficient data management.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Deploying and managing applications on cloud platforms like AWS.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Creating mobile-friendly, responsive interfaces that work on all devices.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>API Development</h3>
+                    <p>Building RESTful APIs for seamless integration between systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Portfolio</span>
+                <h2 class="section-title">Recent Projects</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Project 1">
+                        <div class="portfolio-overlay">
+                            <h4>E-Commerce Platform</h4>
+                            <p>Full Stack Development</p>
+                            <div class="portfolio-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Project 2">
+                        <div class="portfolio-overlay">
+                            <h4>Dashboard Application</h4>
+                            <p>React & Node.js</p>
+                            <div class="portfolio-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Project 3">
+                        <div class="portfolio-overlay">
+                            <h4>Social Media App</h4>
+                            <p>Mobile Application</p>
+                            <div class="portfolio-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Project 4">
+                        <div class="portfolio-overlay">
+                            <h4>Portfolio Website</h4>
+                            <p>Web Development</p>
+                            <div class="portfolio-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Project 5">
+                        <div class="portfolio-overlay">
+                            <h4>API Integration</h4>
+                            <p>Backend Development</p>
+                            <div class="portfolio-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Project 6">
+                        <div class="portfolio-overlay">
+                            <h4>Blog Platform</h4>
+                            <p>Full Stack Application</p>
+                            <div class="portfolio-links">
+                                <a href="#"><i class="fas fa-link"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Talk About Your Project</h3>
+                    <p>Feel free to contact me if you have any questions or need a quote. I'm always available to discuss new projects and opportunities.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span>Email</span>
+                                <p>elsayed@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span>Phone</span>
+                                <p>+1 234 567 890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span>Location</span>
+                                <p>Available Worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home">Elsayed</a>
+                </div>
+                <p>&copy; 2024 Elsayed. All Rights Reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
