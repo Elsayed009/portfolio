@@ -310,21 +310,34 @@ function initPortfolioHover() {
 // Form Submission
 // 
 function initFormSubmission() {
-    const form = document.querySelector('.contact-form form');
+    const form = document.getElementById('contact-form');
     
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+            // Get the submit button
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
             
-            // Show success message (in production, send to server)
-            alert('Thank you for your message! I will get back to you soon.');
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
             
-            // Reset form
-            this.reset();
+            // Send email using EmailJS
+            // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS credentials
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('Thank you for your message! I will get back to you soon.');
+                    form.reset();
+                }, function(error) {
+                    console.error('FAILED...', error);
+                    alert('Sorry, something went wrong. Please try again later.');
+                })
+                .finally(function() {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 }
